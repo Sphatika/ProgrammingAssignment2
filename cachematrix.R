@@ -45,42 +45,22 @@ cacheSolve <- function(y, ...){
 inverseMatrix <- y$getInverse()
 
 #print(inverseMatrix)
-
-    ## Just return the inverse if its already set
-
- 
-
-
-
-
+## Just return the inverse if its already set
 
  if( !is.null(inverseMatrix) ) {
 message("getting cached data")
  return(inverseMatrix)
     }
-
-
-
-
+	
     ## Get the matrix from our object
-
     orginalMatrix <- y$get()
 
-
-
     ## Calculate the inverse using matrix multiplication
-
      inverseMatrix  <- solve(orginalMatrix, ...) 
 
-
-
     ## Set the inverse to the object
-
     y$setInverse(inverseMatrix)
 
-
-
     ## Return the matrix
-
    return(inverseMatrix)    
 }
